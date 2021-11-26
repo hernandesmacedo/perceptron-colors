@@ -19,44 +19,46 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Header(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Wrap(
-          spacing: 5.0,
-          runSpacing: 16.0,
-          alignment: WrapAlignment.center,
-          children: [
-            RGBSlider(
-              min: 0,
-              max: 255,
-              value: rSliderValue,
-              onChanged: (value) {
-                setState(() {
-                  rSliderValue = value.toInt();
-                });
-              },
-            ),
-            RGBSlider(
-              min: 0,
-              max: 255,
-              value: gSliderValue,
-              onChanged: (value) {
-                setState(() {
-                  gSliderValue = value.toInt();
-                });
-              },
-            ),
-            RGBSlider(
-              min: 0,
-              max: 255,
-              value: bSliderValue,
-              onChanged: (value) {
-                setState(() {
-                  bSliderValue = value.toInt();
-                });
-              },
-            ),
-          ],
+      body: Center(
+        child: Container(
+          width: (MediaQuery.of(context).size.height) * 0.65,
+          height: (MediaQuery.of(context).size.height) * 0.65,
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RGBSlider(
+                min: 0,
+                max: 255,
+                value: rSliderValue,
+                onChanged: (value) {
+                  setState(() {
+                    rSliderValue = value.toInt();
+                  });
+                },
+              ),
+              RGBSlider(
+                min: 0,
+                max: 255,
+                value: gSliderValue,
+                onChanged: (value) {
+                  setState(() {
+                    gSliderValue = value.toInt();
+                  });
+                },
+              ),
+              RGBSlider(
+                min: 0,
+                max: 255,
+                value: bSliderValue,
+                onChanged: (value) {
+                  setState(() {
+                    bSliderValue = value.toInt();
+                  });
+                },
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: const Footer(),
