@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           width: (MediaQuery.of(context).size.height) * 0.65,
           height: (MediaQuery.of(context).size.height) * 0.65,
+          color: const Color(0xFFedfffd),
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -61,6 +62,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      backgroundColor: const Color(0xFFd7fffb),
       bottomNavigationBar: const Footer(),
     );
   }
