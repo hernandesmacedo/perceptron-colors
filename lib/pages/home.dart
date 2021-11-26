@@ -61,7 +61,12 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: (MediaQuery.of(context).size.height) * 0.1,
                 width: (MediaQuery.of(context).size.height) * 0.1,
-                color: Colors.red,
+                color: Color.fromRGBO(
+                  rSliderValue,
+                  gSliderValue,
+                  bSliderValue,
+                  1,
+                ),
               )
             ],
           ),
