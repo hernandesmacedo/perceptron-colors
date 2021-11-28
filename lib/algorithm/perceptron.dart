@@ -1,6 +1,6 @@
 import 'dart:math';
 
-List<String> colorsNames = [
+List<String> colorNames = [
   'Red',
   'Green',
   'Blue',
@@ -58,7 +58,7 @@ int bias = 1;
 
 double learningRate = 0.015;
 
-num yr = 0;
+num yp = 0;
 
 num error = 0;
 
@@ -77,35 +77,35 @@ List<num> normalize(List<num> color) {
   return color;
 }
 
-double operate(List<num> entry, List<num> weigth) {
+double operate(List<num> input, List<num> weigth) {
   double sum = 0;
-  for (int i = 0; i < entry.length; i++) {
-    sum += entry[i] * weigth[i];
+  for (int i = 0; i < input.length; i++) {
+    sum += input[i] * weigth[i];
   }
   return sum;
 }
 
-String getColorName(List<num> colorValue) {
-  colorValue = normalize(colorValue);
+String getColorName(List<num> inputColorValue) {
+  inputColorValue = normalize(inputColorValue);
 
-  List<num> resultColor = [];
-  for (int neuro = 0; neuro < w.length; neuro++) {
-    resultColor.add(operate(colorValue, w[neuro]));
+  List<num> outputResultColor = [];
+  for (int neuron = 0; neuron < w.length; neuron++) {
+    outputResultColor.add(operate(inputColorValue, w[neuron]));
   }
-  int colorR = resultColor.indexOf(resultColor.reduce(max));
-  return colorsNames[colorR];
+  int winnerTakesAll = outputResultColor.indexOf(outputResultColor.reduce(max));
+  return colorNames[winnerTakesAll];
 }
 
-void perceptronTraining(int epoca) {
-  for (int i = 0; i < epoca; i++) {
-    for (int amostra = 0; amostra < x.length; amostra++) {
-      for (int neuro = 0; neuro < x.length; neuro++) {
-        yr = operate(x[amostra], w[neuro]) + bias;
-        error = y[amostra][neuro] - yr;
-        w[neuro] = [
-          w[neuro][0] + learningRate * error * x[amostra][0],
-          w[neuro][1] + learningRate * error * x[amostra][1],
-          w[neuro][2] + learningRate * error * x[amostra][2],
+void perceptronTraining(int totalEra) {
+  for (int era = 0; era < totalEra; era++) {
+    for (int sample = 0; sample < x.length; sample++) {
+      for (int neuron = 0; neuron < x.length; neuron++) {
+        yp = operate(x[sample], w[neuron]) + bias;
+        error = y[sample][neuron] - yp;
+        w[neuron] = [
+          w[neuron][0] + learningRate * error * x[sample][0],
+          w[neuron][1] + learningRate * error * x[sample][1],
+          w[neuron][2] + learningRate * error * x[sample][2],
         ];
       }
     }
