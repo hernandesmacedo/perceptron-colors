@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:perceptron_colors/widgets/footer.dart';
 import 'package:perceptron_colors/widgets/header.dart';
 import 'package:perceptron_colors/widgets/rgb_slider.dart';
+import 'package:perceptron_colors/algorithm/perceptron.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   int rSliderValue = 0;
   int gSliderValue = 0;
   int bSliderValue = 0;
+  String colorName = 'Black';
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,9 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       rSliderValue = value.toInt();
+                      colorName = getColorName(normalize(
+                        [rSliderValue, gSliderValue, bSliderValue],
+                      ));
                     });
                   },
                 ),
@@ -47,6 +52,9 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       gSliderValue = value.toInt();
+                      colorName = getColorName(normalize(
+                        [rSliderValue, gSliderValue, bSliderValue],
+                      ));
                     });
                   },
                 ),
@@ -57,9 +65,13 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       bSliderValue = value.toInt();
+                      colorName = getColorName(normalize(
+                        [rSliderValue, gSliderValue, bSliderValue],
+                      ));
                     });
                   },
                 ),
+                const Padding(padding: EdgeInsets.all(20)),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Container(
@@ -71,6 +83,15 @@ class _HomePageState extends State<HomePage> {
                       bSliderValue,
                       1,
                     ),
+                  ),
+                ),
+                const Padding(padding: EdgeInsets.all(4)),
+                Text(
+                  colorName,
+                  style: const TextStyle(
+                    fontSize: 26,
+                    fontFamily: 'Calibri',
+                    color: Colors.grey,
                   ),
                 ),
               ],
