@@ -67,7 +67,7 @@ List<List<num>> y = [
 
 int bias = 1;
 
-double learning = 0.1;
+double learningRate = 0.015;
 
 Random rand = Random();
 
@@ -104,9 +104,9 @@ void perceptronTrain(int epoca) {
         yr = operate(x[amostra], w[neuro]) + bias;
         error = y[amostra][neuro] - yr;
         w[neuro] = [
-          w[neuro][0] + learning * error * x[amostra][0],
-          w[neuro][1] + learning * error * x[amostra][1],
-          w[neuro][2] + learning * error * x[amostra][2],
+          w[neuro][0] + learningRate * error * x[amostra][0],
+          w[neuro][1] + learningRate * error * x[amostra][1],
+          w[neuro][2] + learningRate * error * x[amostra][2],
         ];
       }
     }
