@@ -1,16 +1,24 @@
-# perceptron_colors
+# Perceptron Colors
 
-A new Flutter project.
+This is an Artificial Intelligence project that performs a Perceptron algorithm of neural network-supervised learning to classify 8 (eight) different colors out of all possible RGB combinations:
 
-## Getting Started
+![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) Red
 
-This project is a starting point for a Flutter application.
+![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) Green
 
-A few resources to get you started if this is your first Flutter project:
+![#0000ff](https://via.placeholder.com/15/0000ff/000000?text=+) Blue
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![#000000](https://via.placeholder.com/15/000000/000000?text=+) Black
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![#ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) White
+
+![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) Yellow
+
+![#ff00ff](https://via.placeholder.com/15/ff00ff/000000?text=+) Magenta
+
+![#00ffff](https://via.placeholder.com/15/00ffff/000000?text=+) Cyan
+
+## Interface
+
+![github](images/home_black_selected.png)
+![github](images/home_magenta_selected.png)
