@@ -39,9 +39,9 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       rSliderValue = value.toInt();
-                      colorName = getColorName(normalize(
+                      colorName = getColorName(
                         [rSliderValue, gSliderValue, bSliderValue],
-                      ));
+                      );
                     });
                   },
                 ),
@@ -52,9 +52,9 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       gSliderValue = value.toInt();
-                      colorName = getColorName(normalize(
+                      colorName = getColorName(
                         [rSliderValue, gSliderValue, bSliderValue],
-                      ));
+                      );
                     });
                   },
                 ),
@@ -65,9 +65,9 @@ class _HomePageState extends State<HomePage> {
                   onChanged: (value) {
                     setState(() {
                       bSliderValue = value.toInt();
-                      colorName = getColorName(normalize(
+                      colorName = getColorName(
                         [rSliderValue, gSliderValue, bSliderValue],
-                      ));
+                      );
                     });
                   },
                 ),

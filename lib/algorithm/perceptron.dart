@@ -85,9 +85,9 @@ List<List<num>> w = [
 num error = 0;
 
 String getColorName(List<num> colorValue) {
+  colorValue = normalize(colorValue);
+
   List<num> resultColor = [];
-  print(colorValue);
-  print(w);
   for (int neuro = 0; neuro < w.length; neuro++) {
     resultColor.add(operate(colorValue, w[neuro]));
   }
