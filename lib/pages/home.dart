@@ -85,6 +85,21 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+                const Padding(padding: EdgeInsets.all(8)),
+                Text(
+                  '[' +
+                      rSliderValue.toString() +
+                      ', ' +
+                      gSliderValue.toString() +
+                      ', ' +
+                      bSliderValue.toString() +
+                      ']',
+                  style: const TextStyle(
+                    fontSize: 26,
+                    fontFamily: 'Calibri',
+                    color: Colors.grey,
+                  ),
+                ),
                 const Padding(padding: EdgeInsets.all(4)),
                 Text(
                   colorName,
