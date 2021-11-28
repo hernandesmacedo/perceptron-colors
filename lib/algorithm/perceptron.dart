@@ -11,24 +11,15 @@ List<String> colorNames = [
   'Cyan',
 ];
 
-List<num> red = [1.0, -1.0, -1.0];
-List<num> green = [-1.0, 1.0, -1.0];
-List<num> blue = [-1.0, -1.0, 1.0];
-List<num> black = [-1.0, -1.0, -1.0];
-List<num> white = [1.0, 1.0, 1.0];
-List<num> yellow = [1.0, 1.0, -1.0];
-List<num> magenta = [1.0, -1.0, 1.0];
-List<num> cyan = [-1.0, 1.0, 1.0];
-
 List<List<num>> x = [
-  red,
-  green,
-  blue,
-  black,
-  white,
-  yellow,
-  magenta,
-  cyan,
+  [1.0, -1.0, -1.0],
+  [-1.0, 1.0, -1.0],
+  [-1.0, -1.0, 1.0],
+  [-1.0, -1.0, -1.0],
+  [1.0, 1.0, 1.0],
+  [1.0, 1.0, -1.0],
+  [1.0, -1.0, 1.0],
+  [-1.0, 1.0, 1.0],
 ];
 
 List<List<num>> y = [
