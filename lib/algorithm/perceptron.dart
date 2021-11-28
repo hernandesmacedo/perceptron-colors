@@ -1,28 +1,5 @@
 import 'dart:math';
 
-List<num> normalize(List<num> color) {
-  int minValue = 0;
-  int denominator = 255;
-  color[0] = (color[0] - minValue) / denominator;
-  color[1] = (color[1] - minValue) / denominator;
-  color[2] = (color[2] - minValue) / denominator;
-
-  int newRange = 2;
-  color[0] = (color[0] * newRange) - 1;
-  color[1] = (color[1] * newRange) - 1;
-  color[2] = (color[2] * newRange) - 1;
-
-  return color;
-}
-
-double operate(List<num> entry, List<num> weigth) {
-  double sum = 0;
-  for (int i = 0; i < entry.length; i++) {
-    sum += entry[i] * weigth[i];
-  }
-  return sum;
-}
-
 List<String> colorsNames = [
   'Red',
   'Green',
@@ -65,12 +42,7 @@ List<List<num>> y = [
   [-1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0],
 ];
 
-int bias = 1;
-
-double learningRate = 0.015;
-
 Random rand = Random();
-
 List<List<num>> w = [
   [rand.nextDouble(), rand.nextDouble(), rand.nextDouble()],
   [rand.nextDouble(), rand.nextDouble(), rand.nextDouble()],
@@ -82,7 +54,36 @@ List<List<num>> w = [
   [rand.nextDouble(), rand.nextDouble(), rand.nextDouble()],
 ];
 
+int bias = 1;
+
+double learningRate = 0.015;
+
+num yr = 0;
+
 num error = 0;
+
+List<num> normalize(List<num> color) {
+  int minValue = 0;
+  int denominator = 255;
+  color[0] = (color[0] - minValue) / denominator;
+  color[1] = (color[1] - minValue) / denominator;
+  color[2] = (color[2] - minValue) / denominator;
+
+  int newRange = 2;
+  color[0] = (color[0] * newRange) - 1;
+  color[1] = (color[1] * newRange) - 1;
+  color[2] = (color[2] * newRange) - 1;
+
+  return color;
+}
+
+double operate(List<num> entry, List<num> weigth) {
+  double sum = 0;
+  for (int i = 0; i < entry.length; i++) {
+    sum += entry[i] * weigth[i];
+  }
+  return sum;
+}
 
 String getColorName(List<num> colorValue) {
   colorValue = normalize(colorValue);
@@ -95,9 +96,7 @@ String getColorName(List<num> colorValue) {
   return colorsNames[colorR];
 }
 
-num yr = 0;
-
-void perceptronTrain(int epoca) {
+void perceptronTraining(int epoca) {
   for (int i = 0; i < epoca; i++) {
     for (int amostra = 0; amostra < x.length; amostra++) {
       for (int neuro = 0; neuro < x.length; neuro++) {

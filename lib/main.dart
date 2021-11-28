@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    perceptronTrain(200);
+    perceptronTraining(200);
     return const MaterialApp(
       home: HomePage(),
     );
