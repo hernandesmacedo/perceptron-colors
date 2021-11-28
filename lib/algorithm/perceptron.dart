@@ -85,17 +85,6 @@ double operate(List<num> input, List<num> weigth) {
   return sum;
 }
 
-String getColorName(List<num> inputColorValue) {
-  inputColorValue = normalize(inputColorValue);
-
-  List<num> outputResultColor = [];
-  for (int neuron = 0; neuron < w.length; neuron++) {
-    outputResultColor.add(operate(inputColorValue, w[neuron]));
-  }
-  int winnerTakesAll = outputResultColor.indexOf(outputResultColor.reduce(max));
-  return colorNames[winnerTakesAll];
-}
-
 void perceptronTraining(int totalEra) {
   for (int era = 0; era < totalEra; era++) {
     for (int sample = 0; sample < x.length; sample++) {
@@ -110,4 +99,15 @@ void perceptronTraining(int totalEra) {
       }
     }
   }
+}
+
+String getColorName(List<num> inputColorValue) {
+  inputColorValue = normalize(inputColorValue);
+
+  List<num> outputResultColor = [];
+  for (int neuron = 0; neuron < w.length; neuron++) {
+    outputResultColor.add(operate(inputColorValue, w[neuron]));
+  }
+  int winnerTakesAll = outputResultColor.indexOf(outputResultColor.reduce(max));
+  return colorNames[winnerTakesAll];
 }
