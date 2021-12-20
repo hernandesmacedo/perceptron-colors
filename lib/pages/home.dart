@@ -12,10 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int rSliderValue = 0;
-  int gSliderValue = 0;
-  int bSliderValue = 0;
-  String colorName = 'Black';
+  var colorsValue = {
+    'red': 0,
+    'green': 0,
+    'blue': 0,
+  };
+  var colorName = 'Black';
 
   @override
   Widget build(BuildContext context) {
@@ -35,40 +37,25 @@ class _HomePageState extends State<HomePage> {
                 RGBSlider(
                   min: 0,
                   max: 255,
-                  value: rSliderValue,
+                  value: colorsValue['red']!,
                   onChanged: (value) {
-                    setState(() {
-                      rSliderValue = value.toInt();
-                      colorName = getColorName(
-                        [rSliderValue, gSliderValue, bSliderValue],
-                      );
-                    });
+                    onChange('red', value);
                   },
                 ),
                 RGBSlider(
                   min: 0,
                   max: 255,
-                  value: gSliderValue,
+                  value: colorsValue['green']!,
                   onChanged: (value) {
-                    setState(() {
-                      gSliderValue = value.toInt();
-                      colorName = getColorName(
-                        [rSliderValue, gSliderValue, bSliderValue],
-                      );
-                    });
+                    onChange('green', value);
                   },
                 ),
                 RGBSlider(
                   min: 0,
                   max: 255,
-                  value: bSliderValue,
+                  value: colorsValue['blue']!,
                   onChanged: (value) {
-                    setState(() {
-                      bSliderValue = value.toInt();
-                      colorName = getColorName(
-                        [rSliderValue, gSliderValue, bSliderValue],
-                      );
-                    });
+                    onChange('blue', value);
                   },
                 ),
                 const Padding(padding: EdgeInsets.all(20)),
@@ -78,9 +65,9 @@ class _HomePageState extends State<HomePage> {
                     height: (MediaQuery.of(context).size.height) * 0.1,
                     width: (MediaQuery.of(context).size.height) * 0.1,
                     color: Color.fromRGBO(
-                      rSliderValue,
-                      gSliderValue,
-                      bSliderValue,
+                      colorsValue['red']!,
+                      colorsValue['green']!,
+                      colorsValue['blue']!,
                       1,
                     ),
                   ),
@@ -88,11 +75,11 @@ class _HomePageState extends State<HomePage> {
                 const Padding(padding: EdgeInsets.all(8)),
                 Text(
                   '[' +
-                      rSliderValue.toString() +
+                      colorsValue['red'].toString() +
                       ', ' +
-                      gSliderValue.toString() +
+                      colorsValue['green'].toString() +
                       ', ' +
-                      bSliderValue.toString() +
+                      colorsValue['blue'].toString() +
                       ']',
                   style: const TextStyle(
                     fontSize: 26,
@@ -117,5 +104,14 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color(0xFFd7fffb),
       bottomNavigationBar: const Footer(),
     );
+  }
+
+  void onChange(String color, double value) {
+    setState(() {
+      colorsValue[color] = value.toInt();
+      colorName = getColorName(
+        [colorsValue['red']!, colorsValue['green']!, colorsValue['blue']!],
+      );
+    });
   }
 }
