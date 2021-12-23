@@ -1,6 +1,6 @@
 # [Perceptron Colors](https://hernandesmacedo.github.io/perceptron-colors/)
 
-Access the page by [clicking here](https://hernandesmacedo.github.io/perceptron-colors/)!
+[Click here](https://hernandesmacedo.github.io/perceptron-colors/) to access the page!
 
 This is an Artificial Intelligence project that performs a Perceptron algorithm of neural network-supervised learning to classify 8 (eight) different colors out of all possible RGB combinations:
 
