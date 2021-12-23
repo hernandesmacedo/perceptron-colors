@@ -34089,7 +34089,7 @@ KS(a){var s,r=this,q=null
 r.a.toString
 s=r.gyQ()
 r.a.toString
-return new S.tg(q,q,q,new S.X3(),q,q,q,q,C.zv,C.Dd,q,q,C.AU,r.gOy(),"",q,C.Gw,C.ct,q,s,q,q,C.id,!1,!1,!1,!1,r.gOj(),!0,q,q,q,!1,new N.i7(r,t.By))},
+return new S.tg(q,q,q,new S.X3(),q,q,q,q,C.zv,C.Dd,q,q,C.AU,r.gOy(),"Perceptron Colors",q,C.Gw,C.ct,q,s,q,q,C.id,!1,!1,!1,!1,r.gOj(),!0,q,q,q,!1,new N.i7(r,t.By))},
 N(a,b){var s,r=null,q=L.xQ(!1,!1,this.KS(b),r,!0,r,!0,r,r,new S.X4(),r,r)
 this.a.toString
 s=this.d
