@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     perceptronTraining(200);
     return const MaterialApp(
+      title: 'Perceptron Colors',
       home: HomePage(),
     );
   }
